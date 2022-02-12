@@ -1,0 +1,16 @@
+<div class="login-box">
+  <h2>{{ textTitle }}</h2>
+  <form (ngSubmit)="formSubmit()">
+    <div class="user-box">
+      <input type="text" name="userName" [(ngModel)]="user.name"/>
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password" [(ngModel)]="user.password"/>
+      <label>Password</label>
+    </div>
+    <button type="submit" class="btn btn-dark" style="border-radius: 15px;">
+      {{ textButton }}
+    </button>    
+  </form>
+</div>

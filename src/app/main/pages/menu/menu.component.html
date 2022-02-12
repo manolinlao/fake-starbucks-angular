@@ -1,0 +1,50 @@
+<div> 
+  <ul class="nav" style="padding-left:110px;padding-top:10px">
+    <li class="nav-item">
+      <a  routerLink="products" 
+          routerLinkActive="active" 
+          class="nav-link" 
+          style="color:black;font-weight: bold">
+          All Products
+      </a>
+    </li>
+    <li class="nav-item">
+      <a  routerLink="featured" 
+          routerLinkActive="active" 
+          class="nav-link" 
+          style="color:black;font-weight: bold">
+          Featured
+      </a>
+    </li>
+    <li class="nav-item">
+      <a  routerLink="previous" 
+          routerLinkActive="active" 
+          class="nav-link" 
+          style="color:black;font-weight: bold">
+          Previous Orders
+      </a>
+    </li>
+    <li class="nav-item">
+      <a  routerLink="favorites" 
+          routerLinkActive="active" 
+          class="nav-link" 
+          style="color:black;font-weight: bold">
+          Favorite Products
+      </a>
+    </li>
+  </ul>  
+</div>
+<hr/>
+
+
+<div *ngIf="dataLoaded" style="display: flex;">
+  <div *ngIf="subMenuLoaded=='allproducts'" style="padding-left:125px;">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>  
+</div>
+<div *ngIf="!dataLoaded" style="display:flex;justify-content:center;padding: 100px;" >
+  Loading data...
+</div>

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4 sticky-top" >
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="" routerLinkActive="active" class="nav-link"><img src="/assets/img/logo.jpg" style="border-radius: 50%" width="50px" height="50px"/></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="menu" routerLinkActive="active" class="nav-link" style="font-weight: bold;font-size: larger;">MENU</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="rewards" routerLinkActive="active" class="nav-link" style="font-weight: bold;font-size: larger">REWARDS</a>
+        </li>  
+        <li class="nav-item">
+          <a routerLink="gift" routerLinkActive="active" class="nav-link" style="font-weight: bold;font-size: larger">GIFT CARDS</a>
+        </li>             
+      </ul>
+      <form class="d-flex">
+        <a routerLink="find" routerLinkActive="active" class="nav-link" style="color:antiquewhite"><i class="fa-solid fa-location-dot"></i> Find a store</a>        
+        &nbsp;&nbsp;&nbsp;
+        <div *ngIf="!userName">
+          <button (click)="signIn()" class="btn btn-secondary" style="border-radius: 15px;">Sign in</button>
+        </div>  
+        <div *ngIf="userName">
+          &nbsp;&nbsp;&nbsp;
+          <button (click)="logOut()" class="btn btn-secondary" style="border-radius: 15px;">Log Out</button>
+        </div>      
+        <div *ngIf="!userName">
+          &nbsp;&nbsp;&nbsp;
+          <button (click)="joinNow()"class="btn btn-secondary" style="border-radius: 15px;">Join now</button>
+        </div>        
+      </form>
+    </div>
+  </div>  
+</nav>
+<div style="display:flex;justify-content:center;background-color: rgb(212, 188, 158); height: 30px; font-weight: bolder;">
+  Welcome {{ userName }} to the Fake Starbucks Page for fake coffe lovers
+</div>
+

@@ -1,0 +1,24 @@
+<div class="container" style="padding-left:30px">
+  <h2>Menu</h2>
+  <div *ngFor="let category of data" class="mt-4">
+    <div>
+      <h4>{{ category.category | titlecase}}</h4>
+      <hr/>
+        <div class="row row-cols-2">
+          <div *ngFor="let subcategory of category.subCategories" 
+                class="col p-4"
+                style="cursor:pointer"
+                (click)="productSelected(subcategory.subCategoryId)">
+            <div style="display: flex;">
+              <div>
+                <img src="assets/img/cosa.jpg" width="100px" height="100px" style="border-radius: 50%"/>
+              </div>
+              <div style="padding:30px">
+                <h5>{{ subcategory.subCategoryName | titlecase}}</h5>
+              </div>              
+            </div>          
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

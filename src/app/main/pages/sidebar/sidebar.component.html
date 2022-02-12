@@ -1,0 +1,12 @@
+<div *ngFor="let category of data" class="mb-4">
+  <h5>{{ category.category | titlecase }}</h5>
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let subcategory of category.subCategories" 
+        class="list-group-item" 
+        style="cursor:pointer"
+        (click)="productSelected(subcategory.subCategoryId)">
+      {{ subcategory.subCategoryName | titlecase}}
+    </li>   
+  </ul>  
+</div>
+

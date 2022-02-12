@@ -1,0 +1,163 @@
+<div class="container">
+  <div class="row">
+    <div class="col-1" style="cursor: pointer;" (click)="goMenu()">
+      <h5>Menu</h5>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+<div style="width: 98vw;height:250px;background-color: rgb(80, 67, 50)">
+  <div style="display: flex;justify-content: center;">
+    <div style="padding:25px">
+      <img src="assets/img/espresso.jpg" width="400px" height="200px"/>
+    </div>
+    <div style="padding: 75px;">
+      <h1 style="color:white">Espresso</h1>
+      <h4 style="color:grey">10 calories</h4>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h4>Size options</h4>
+      <hr style="background-color: rgb(80, 67, 50);height: 3px;"/>
+      
+      <form (ngSubmit)="addToOrder()">
+        <select class="form-select" [(ngModel)]="order.size" name="size">        
+          <option value="short">Short</option>
+          <option value="tall">Tall</option>
+          <option value="grande">Grande</option>
+        </select>       
+        <h4 class="mt-4">Customizations</h4>
+        <hr style="background-color: rgb(80, 67, 50);height: 3px;"/>
+
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect01">Flavor</label>
+          <select class="form-select" id="inputGroupSelect01" name="flavor" [(ngModel)]="order.flavor">
+            <option selected>Choose...</option>
+            <option value="Brown Sugar Syrup">Brown Sugar Syrup</option>
+            <option value="Caramel Syrup">Caramel Syrup</option>
+            <option value="Hazelnut Syrup">Hazelnut Syrup</option>
+            <option value="Dark Caramel Syrup">Dark Caramel Syrup</option>
+          </select>
+        </div>
+
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupSelect01">Topping</label>
+          <select class="form-select" id="inputGroupSelect01" name="topping" [(ngModel)]="order.topping">
+            <option selected>Choose...</option>
+            <option value="Barista Cocoa Powder">Barista Cocoa Powder</option>
+            <option value="Caramel Brulee Topping">Caramel Brulee Topping</option>
+            <option value="Chestnut Praline Topping">Chestnut Praline Topping</option>
+            <option value="Chocolate Curls">Chocolate Curls</option>
+          </select>
+        </div>        
+        
+        <p style="font-weight: bold;">Cup Sizes</p>
+        <div style="margin-left: 20px;">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Tall" checked [(ngModel)]="order.cupsize">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Tall Cup
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Grande" [(ngModel)]="order.cupsize">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Grande Cup
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="Venti" [(ngModel)]="order.cupsize">
+            <label class="form-check-label" for="flexRadioDefault3">
+              Venti Cup
+            </label>
+          </div>
+        </div>
+
+        <div class="input-group mt-3 mb-5">
+          <span class="input-group-text">Comments</span>
+          <textarea class="form-control" aria-label="With textarea" name="comments" [(ngModel)]="order.comments"></textarea>
+        </div>
+
+        <div class="mt-3 mb-4" style="position:fixed;bottom: 40px; right:40px;">         
+          <button class="btn btn-secondary" style="border-radius: 15px; background-color:rgb(80, 67, 50);" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            Add Order
+          </button>
+        </div>
+        
+      </form>
+
+    </div>
+    <div class="col p-3">
+      <h4>Nutrition</h4>
+      <hr style="background-color: rgb(80, 67, 50);height: 3px;"/>
+      <p style="font-size:larger">Nutrition information is calculated based on our standard recipes. Only changing drink size will update this information. Other customizations will not.</p>    
+      <p>Serving size 1.5 fl oz</p>    
+    </div>
+  </div>
+  
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Order added</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Your order has been added successfully!!
+      <hr/>
+    </div>
+    <div style="font-weight:bold">
+      Order Details:
+    </div>
+
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col">
+          Size
+        </div>
+        <div class="col-8">
+          {{order.size}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          Flavor
+        </div>
+        <div class="col-8">
+          {{order.flavor}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          Topping
+        </div>
+        <div class="col-8">
+          {{order.topping}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          Cup size
+        </div>
+        <div class="col-8">
+          {{order.cupsize}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          Comments
+        </div>
+        <div class="col-8">
+          {{order.comments}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
