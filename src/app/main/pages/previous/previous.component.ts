@@ -3,8 +3,7 @@ import { SidebarMenuService } from '../../services/sidebar-menu.service';
 
 @Component({
   selector: 'app-previous',
-  templateUrl: './previous.component.html',
-  styleUrls: ['./previous.component.css']
+  templateUrl: './previous.component.html'
 })
 export class PreviousComponent implements OnInit {
 

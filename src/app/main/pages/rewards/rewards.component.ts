@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-rewards',
-  templateUrl: './rewards.component.html',
-  styleUrls: ['./rewards.component.css']
+  templateUrl: './rewards.component.html'
 })
 export class RewardsComponent implements OnInit {
 

@@ -1,1 +1,21 @@
-<p>featured works!</p>
+<div style="width: 100vw;">
+
+  <div *ngIf="dataLoaded" class="container">
+
+      <h2>And this month winners are</h2>
+      
+      <div *ngFor="let feature of features,let i=index">
+        <app-featuring-component 
+              [txt1Prop]="feature.txt1" 
+              [txt2Prop]="feature.txt2" 
+              [imageProp]="feature.image" 
+              [marginProp]="marginProp"
+              [index]="i">
+        </app-featuring-component>
+      </div>
+
+      <app-footer></app-footer>
+      
+  </div>
+
+</div>

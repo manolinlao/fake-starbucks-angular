@@ -1,11 +1,12 @@
 
 <div class="container" style="padding-left:30px">
+
   <div class="row">
     <div class="col-1" style="cursor: pointer;" (click)="goMenu()">
       <h5>Menu</h5>
     </div>
-    <div class="col"></div>
   </div> 
+
   <div class="row mb-3">
     <div class="col"><h1>{{ subCategory?.subCategoryName | titlecase }}</h1></div>    
   </div>
@@ -22,7 +23,9 @@
             (click)="productSelected(product.id)">
         <div>
           <div style="text-align: center;" class="mb-4">
-            <img src="assets/img/cosa.jpg" width="100px" height="100px" style="border-radius: 50%"/>
+            <img [src]="getImage( product.id )" 
+                width="100px" height="100px" 
+                style="border-radius: 50%"/>
           </div>
           <div style="text-align: center;">
             <h5>{{product.name | titlecase}}</h5>

@@ -14,6 +14,9 @@ import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { ProductsCategoryComponent } from './pages/products-category/products-category.component';
 import { ProductComponent } from './pages/product/product.component';
 import { FormsModule } from '@angular/forms';
+import { FeaturingComponentComponent } from './components/featuring-component/featuring-component.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MessageComponent } from './components/message/message.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { FormsModule } from '@angular/forms';
     ProductsComponent,
     SidebarComponent,
     ProductsCategoryComponent,
-    ProductComponent,    
+    ProductComponent,
+    FeaturingComponentComponent,
+    FooterComponent,
+    MessageComponent,    
   ],
   exports: [
     MainComponent,

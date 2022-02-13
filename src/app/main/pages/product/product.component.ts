@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarMenuService } from '../../services/sidebar-menu.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from '../../services/data.service';
 
 interface Order{
   size: string;
@@ -12,10 +13,11 @@ interface Order{
 
 @Component({
   selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  templateUrl: './product.component.html'
 })
 export class ProductComponent implements OnInit {
+
+  idProduct: string = '';
 
   order: Order = {
     size: 'short',
@@ -25,10 +27,30 @@ export class ProductComponent implements OnInit {
     cupsize: 'Tall'
   };
 
-  constructor( private sidebarMenuService: SidebarMenuService, private router:Router ) { }
+  constructor(  private sidebarMenuService: SidebarMenuService, 
+                private router:Router, 
+                private activatedRoute: ActivatedRoute, 
+                private dataService:DataService ) { }
 
   ngOnInit(): void {
     this.sidebarMenuService.setCurrentMenu( { menuLoaded: 'product' } );
+
+    this.activatedRoute.params.subscribe(params=>{
+      this.idProduct = params['id'];
+    });
+  }
+
+  get productName(): string{
+    return this.dataService.getProductName(this.idProduct);
+  }
+
+  get productCalories(): string{
+    return '10 calories';
+  }
+
+
+  get imageProduct(): string{
+    return `assets/img/product/${ this.idProduct.substring(0,5)}.jpg`;
   }
 
   goMenu(){    

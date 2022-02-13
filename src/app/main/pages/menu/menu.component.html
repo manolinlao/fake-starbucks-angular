@@ -1,4 +1,5 @@
 <div> 
+
   <ul class="nav" style="padding-left:110px;padding-top:10px">
     <li class="nav-item">
       <a  routerLink="products" 
@@ -32,19 +33,25 @@
           Favorite Products
       </a>
     </li>
-  </ul>  
+  </ul> 
+
 </div>
+
 <hr/>
 
-
 <div *ngIf="dataLoaded" style="display: flex;">
+
   <div *ngIf="subMenuLoaded=='allproducts'" style="padding-left:125px;">
     <app-sidebar></app-sidebar>
   </div>
   <div>
     <router-outlet></router-outlet>
   </div>  
+  
 </div>
+
 <div *ngIf="!dataLoaded" style="display:flex;justify-content:center;padding: 100px;" >
   Loading data...
 </div>
+
+

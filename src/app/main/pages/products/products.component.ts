@@ -8,8 +8,7 @@ import { SidebarMenuService } from '../../services/sidebar-menu.service';
 
 @Component({
   selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  templateUrl: './products.component.html'
 })
 export class ProductsComponent implements OnInit {
 
@@ -19,12 +18,16 @@ export class ProductsComponent implements OnInit {
     this.sidebarMenuService.setCurrentMenu( { menuLoaded: 'allproducts' } );
   }
 
-  get data():Category[]{
+  get data(): Category[]{
     return this.dataService.data;
   }
 
   productSelected( id: string ){
     this.router.navigate( ['/menu/subcategory', id ] );
+  }
+
+  getImage( id: string ){
+    return `assets/img/category/${ id }.jpg`;
   }
 
 }

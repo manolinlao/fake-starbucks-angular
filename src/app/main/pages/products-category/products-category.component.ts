@@ -5,8 +5,7 @@ import { SubCategory } from '../../interfaces/coffeedata.interface';
 
 @Component({
   selector: 'app-products-category',
-  templateUrl: './products-category.component.html',
-  styleUrls: ['./products-category.component.css']
+  templateUrl: './products-category.component.html'
 })
 export class ProductsCategoryComponent implements OnInit {
 
@@ -20,7 +19,7 @@ export class ProductsCategoryComponent implements OnInit {
     });
   }
 
-  get subCategory():SubCategory | undefined{
+  get subCategory(): SubCategory | undefined{
     return this.dataService.getSubCategory(this.idCategory);
   }
 
@@ -30,6 +29,11 @@ export class ProductsCategoryComponent implements OnInit {
 
   productSelected( id: string){
     this.router.navigate( ['/menu/product', id ] );
+  }
+
+  getImage( id: string ){
+    console.log(id);
+    return `assets/img/category/${ id.substring(0,8) }.jpg`;
   }
 
 }

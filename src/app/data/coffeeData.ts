@@ -1,5 +1,9 @@
 import { Category } from "../main/interfaces/coffeedata.interface";
 
+/**
+ * Data to be shown in Menu > All Products
+ */
+
 export const coffeeData: Category[]= [
   {
     category: 'drinks',

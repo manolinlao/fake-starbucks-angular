@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SidebarMenuService } from '../../services/sidebar-menu.service';
 import { DataService } from '../../services/data.service';
-import { Category } from '../../interfaces/coffeedata.interface';
 
 @Component({
   selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  templateUrl: './menu.component.html'
 })
 export class MenuComponent implements OnInit {
 

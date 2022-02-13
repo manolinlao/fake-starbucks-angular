@@ -1,36 +1,17 @@
-<div class="container-fluid overflow-hidden">
-  <div class='row mb-5 mt-5'>
-    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12'> nuestro bloque </div>
-    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12' style="padding: 0;"> 
-      <img src="assets/img/main/main001.jpg" class="img-fluid mx-auto"/>
-    </div>    
+<div class="container">
+
+  <div *ngFor="let item of mainData,let i=index">
+
+    <app-featuring-component 
+          [txt1Prop]="item.txt1" 
+          [txt2Prop]="item.txt2" 
+          [imageProp]="item.image" 
+          [marginProp]="marginProp"
+          [index]="i">
+    </app-featuring-component>
+
   </div>
-  <div class='row mb-5 mt-5'>
-    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12' style="padding: 0;">
-      <img src="assets/img/main/main002.jpg" class="img-fluid mx-auto"/>
-    </div>      
-    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12' style="padding: 0;"> 
-      aaa
-    </div>    
-  </div>
-  <div class='row mb-5 mt-5'>
-    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12'> nuestro bloque </div>
-    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12' style="padding: 0;"> 
-      <img src="assets/img/main/main003.jpg" class="img-fluid mx-auto"/>
-    </div>    
-  </div>
-  <div class='row mb-5 mt-5'>
-    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12' style="padding: 0;">
-      <img src="assets/img/main/main004.jpg" class="img-fluid mx-auto"/>
-    </div>      
-    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12' style="padding: 0;"> 
-      aaa
-    </div>    
-  </div>
-  <hr/>
-  <div class='row mb-5 mt-5'>
-    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12' style="padding: 0;">
-      <img src="assets/img/footer.jpg" class="img-fluid mx-auto"/>
-    </div>           
-  </div> 
+
+  <app-footer></app-footer>
+  
 </div>

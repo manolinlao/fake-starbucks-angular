@@ -10,11 +10,11 @@
 <div style="width: 98vw;height:250px;background-color: rgb(80, 67, 50)">
   <div style="display: flex;justify-content: center;">
     <div style="padding:25px">
-      <img src="assets/img/espresso.jpg" width="400px" height="200px"/>
+      <img [src]="imageProduct" width="400px" height="200px"/>
     </div>
     <div style="padding: 75px;">
-      <h1 style="color:white">Espresso</h1>
-      <h4 style="color:grey">10 calories</h4>
+      <h1 style="color:white">{{ productName }}</h1>
+      <h4 style="color:grey">{{ productCalories }}</h4>
     </div>
   </div>
 </div>
@@ -26,6 +26,7 @@
       <hr style="background-color: rgb(80, 67, 50);height: 3px;"/>
       
       <form (ngSubmit)="addToOrder()">
+        
         <select class="form-select" [(ngModel)]="order.size" name="size">        
           <option value="short">Short</option>
           <option value="tall">Tall</option>
@@ -99,6 +100,7 @@
       <p>Serving size 1.5 fl oz</p>    
     </div>
   </div>
+  
   
 </div>
 

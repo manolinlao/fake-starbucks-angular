@@ -4,6 +4,7 @@ import { Category, SubCategory } from '../interfaces/coffeedata.interface';
 import { coffeeData } from '../../data/coffeeData';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -37,6 +38,25 @@ export class DataService {
       }
     }
     return subCategory;
+  }
+
+  getProductName( id: string ): string {
+    let result: string = '';
+
+    for( let i = 0; i < this.data.length; i++ ){
+      for( let j = 0; j < this.data[i].subCategories.length; j++ ){
+        for( let k = 0; k < this.data[i].subCategories[j].subCategoryProducts.length; k++ ){
+          for( let l = 0; l < this.data[i].subCategories[j].subCategoryProducts[k].products.length; l++ ){
+            if( this.data[i].subCategories[j].subCategoryProducts[k].products[l].id === id ){
+              result = this.data[i].subCategories[j].subCategoryProducts[k].products[l].name;
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    return result;
   }
 
 }
