@@ -1,4 +1,8 @@
-<div class="container">
+<div #loader style="display:flex;justify-content:center;padding: 100px;font-size: 35pt;" >
+  <i class="fa-solid fa-mug-saucer fa-spin"></i>
+</div>
+
+<div #mainContainer class="container" style="visibility: hidden;">
 
   <div *ngFor="let item of mainData,let i=index">
 
@@ -15,3 +19,4 @@
   <app-footer></app-footer>
   
 </div>
+

@@ -32,7 +32,6 @@ export class ProductsCategoryComponent implements OnInit {
   }
 
   getImage( id: string ){
-    console.log(id);
     return `assets/img/category/${ id.substring(0,8) }.jpg`;
   }
 

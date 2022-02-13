@@ -22,7 +22,7 @@ export class DataService {
         this.data = coffeeData;   
         this.isDataLoaded = true;
         console.log('loaded data');
-      }, 1000 );
+      }, 1500 );
     }
   }
 
